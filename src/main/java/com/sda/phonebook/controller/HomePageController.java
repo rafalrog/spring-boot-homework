@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomePageController {
 
-    @GetMapping("/index")
+    @GetMapping("/login")
     public String someData() {
         //TODO: Must be implemented
-        return "index";
+        return "login";
     }
 
 }

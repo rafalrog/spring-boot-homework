@@ -5,9 +5,7 @@ import com.sda.phonebook.service.PhoneContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.logging.Logger;
 
@@ -33,5 +31,22 @@ public class PhoneContactController {
         model.addAttribute("contacts", phoneContactService.getAllContacts());
         return "contacts";
     }
+
+    @DeleteMapping("/contacts/{id}")
+    public void deleteContact(@PathVariable("id") Integer id) {
+        phoneContactService.deletePhoneContact(id);
+    }
+
+    @PutMapping("/contacts/{id}")
+    public void updateContact(
+            @PathVariable("id") Integer id,
+            @RequestParam(required = false) String firstname,
+            @RequestParam(required = false) String lastname,
+            @RequestParam(required = false) String phonenumber,
+            @RequestParam(required = false) String email) {
+        phoneContactService.updatePhoneContact(id, firstname, lastname, phonenumber, email);
+    }
+
+
 
 }

@@ -27,7 +27,20 @@
             Last name: <input type="text" name="lastname"/><br/>
             Phone number: <input type="text" name="phonenumber"/><br/>
             Email: <input type="email" name="email"/><br/>
+            <hr>
             <input type="submit" value="Create Contact"/>
+        </form>
+        <HR>
+        <form action="/deletecontact" method="DELETE">
+            <input type="submit" value="Delete Contact"/>
+        </form>
+        <HR>
+        <form action="/updatecontact" method="PUT">
+            <input type="submit" value="Update Contact"/>
+        </form>
+       <HR>
+        <form action="/contacts" method="GET">
+            <input type="submit" value="Contacts"/>
         </form>
 
     </div>

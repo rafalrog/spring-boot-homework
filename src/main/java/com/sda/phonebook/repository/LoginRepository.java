@@ -1,6 +1,6 @@
 package com.sda.phonebook.repository;
 
-import com.sda.phonebook.model.PhoneContact;
+import com.sda.phonebook.model.Login;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -9,11 +9,8 @@ import java.util.List;
 
 //@NamedQuery(name = "PhoneContactService.findByLastname", query = " SELECT ...")
 @Repository
-public interface PhoneContactRepository extends JpaRepository<PhoneContact, Integer> {
+public interface LoginRepository extends JpaRepository<Login, Integer> {
 
     //keywords: find, create, delete
-
-    List<PhoneContact> findByFirstname(String firstname);
-    List<PhoneContact> findByFirstnameAndLastname(String firstname, String lastname);
 
 }
